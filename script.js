@@ -72,7 +72,7 @@ console.log("used pop :",arr);
 // 6. Write a function that removes the last element immutably (without modifying original array).
 
 function immutableRemove(arr){
-    console.log("used slice :",arr.slice(0, length-2));    
+    console.log("used slice :",arr.slice(0, arr.length-2));    
 }
 immutableRemove(arr)
 
@@ -88,7 +88,7 @@ acsending(arr)
 
 let strArr = ['harshit' , 'akshat ', 'pankaj', 'sakshi' ]
 function acsending(arr){
-    console.log("sorted arr :",arr.sort((a,b)=> a-b));
+    console.log("sorted arr :",arr.sort());
 }
 acsending(strArr)
 
@@ -135,10 +135,102 @@ function concatinateRemove (arr,arr2){
 }
   return duplicateRemove
 }
-console.log(concatinateRemove(arr, arr2));
+console.log("removed duplicates :", concatinateRemove(arr, arr2));
 
 
+// 12. Write a function that manually checks whether a value exists in an array (without using `includes()`).
+
+function checkValue(arr, value){
+
+    let exist = false
+    arr.forEach((elem)=>{
+        if(elem === value){
+            exist = true
+        }
+    })
+    return exist
+}
+
+console.log("checked wether value is in array or not", checkValue(arr, 200));
+
+//13. Write a function that uses `includes()` to check if an array contains a specific value.
+
+function checkWinclude(arr, value){
+return arr.includes(value)
+}
+console.log("check by includes :",checkWinclude(arr,100));
+
+// 14. Write a function that filters strings starting with "A" using `startsWith()`.
+let Stringarr = ['Harshit', 'Arpit'];
+
+function startWith(arr) {
+    return arr.filter(elem => elem.startsWith('A'));
+}
+
+console.log("starts with A :", startWith(Stringarr));
+;
+
+// 16. Create an object and write a function that returns all its keys using a loop.
+
+let obj = {
+    name: 'harhsit',
+    age : 30,
+    school : 'bhopal',
+    city : 'popular'
+
+}
+
+function getKeys(object) {
+    let keys = [];
+
+    for (let key in object) {
+        keys.push(key);
+    }
+
+    return keys;
+}
+
+console.log("keys using let key in obj",getKeys(obj));
+
+// 17. Write a function that adds a new property to an object immutably.
+
+function addProp(){
+    let obj2 = { ...obj, a: 'b' };
+    return obj2;
+}
+console.log(addProp());
+
+// 18. Write a function that updates a property in an object.
+
+function updateProp(){
+    obj.age = 70
+    return obj
+}
+console.log(updateProp());
+
+// 19. Write a function that checks whether a specific key exists inside an object.
+
+function checkKey(obj,givenKey){
+    let exist = false
+        for (let key in obj) {
+      if(key === givenKey ){
+
+        exist = true
+      }
+       
+    }
+    return exist
+
+}
+console.log(checkKey(obj,'name'));
 
 
+// 20. Write a function that converts an object into an array of key-value pairs.
+
+function keyValue(obj){
+console.log(Object.entries(obj));
 
 
+}
+
+keyValue(obj)
