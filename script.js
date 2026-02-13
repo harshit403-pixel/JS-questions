@@ -1,6 +1,6 @@
 // MAIN ARRAY USED IN MOST QUESTION :
 
-let arr = [1,2,3,4,55,60]
+let arr = [2,1,5,100,8,60]
 
 
 
@@ -75,4 +75,70 @@ function immutableRemove(arr){
     console.log("used slice :",arr.slice(0, length-2));    
 }
 immutableRemove(arr)
+
+
+// 7. Write a function that sorts numbers in ascending order using a proper compare function.
+
+function acsending(arr){
+    console.log("sorted arr :",arr.sort((a,b)=> a-b));
+}
+acsending(arr)
+
+// 8. Write a function that sorts strings alphabetically.
+
+let strArr = ['harshit' , 'akshat ', 'pankaj', 'sakshi' ]
+function acsending(arr){
+    console.log("sorted arr :",arr.sort((a,b)=> a-b));
+}
+acsending(strArr)
+
+
+// 9. Write a function that reverses an array without using `reverse()`.
+
+function reverseWOreverse(arr){
+    let reversedArr = []  
+
+    for(let i = arr.length-1; i>=0 ; i--){
+        reversedArr.push(arr[i])
+    }
+    return reversedArr
+
+}
+console.log("reverse array without reverse()", reverseWOreverse(arr));
+
+// 10. Write a function that merges two arrays using `concat()` and returns the result.
+
+let arr2 = [1, 4,5 ,6,76,7 ,3]
+
+function concatinate (arr,arr2){
+   let mergedArr =  arr.concat(arr2)
+   return mergedArr
+}
+console.log("merge arrays :",concatinate(arr, arr2));
+
+// 11. Write a function that merges two arrays and removes duplicate values.
+
+function concatinateRemove (arr,arr2){
+   let mergedArr =  arr.concat(arr2)
+   let duplicateRemove = []
+   for(let i = 0 ;i<mergedArr.length; i++){
+    let isDuplicate = false
+    for(let j = i+1 ; j<mergedArr.length; j++){
+        if(mergedArr[i] === mergedArr[j] ){   
+            isDuplicate = true 
+            break
+    }
+   }
+   if(!isDuplicate){
+    duplicateRemove.push(mergedArr[i])
+   }
+}
+  return duplicateRemove
+}
+console.log(concatinateRemove(arr, arr2));
+
+
+
+
+
 
