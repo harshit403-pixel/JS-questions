@@ -24,15 +24,3 @@ html, body{
 
     gap: 10px;
 }
-
-.box{
-    background-color: rgb(255, 6, 6);
-    border-radius: 10px;
-    height: 200px;
-    width: 200px;
-    padding: 10px;
-    overflow: hidden;
-    display: flex;
-    gap: 10px;
-}
-
