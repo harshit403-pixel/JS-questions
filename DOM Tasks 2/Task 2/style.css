@@ -1,0 +1,37 @@
+/* ## 2. Random Color Card Generator
+
+Create a card on button click. Generate a random RGB background color
+using `Math.floor()` and `Math.random()`. Set a random width and height.
+Assign a unique `data-id` using `setAttribute()`. */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(42, 42, 42);
+    flex-wrap: wrap;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.box{
+    background-color: rgb(58, 27, 32);
+
+    border-radius: 10px;
+}
+.btn{
+    font-size: 20px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+
+}
