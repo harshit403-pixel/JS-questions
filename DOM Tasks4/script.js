@@ -71,6 +71,10 @@ let main = document.querySelector("main")
 let sum = ''
 shoes.forEach((elem) => {
   
+let colorsHTML = "";
+elem.color.forEach((c) => {
+  colorsHTML += `<div class = "inner-color" style="background-color:${c};"></div>`;
+});
 
   sum += `        <div class="shoe-card"  style="
     background-image: url('${elem.bgImage}');
@@ -92,9 +96,9 @@ shoes.forEach((elem) => {
             <h5>${elem.shoesName}</h5>
             <h5>${elem.category}</h5>
             <div class="color">
-                <div style="background-color: ${elem.color[0]};"></div>
-                <div style="background-color: ${elem.color[1]};"></div>
-                <div style="background-color: ${elem.color[2]};"></div>
+<div class="color">
+  ${colorsHTML}
+</div>
             </div>
             <h4>Rs ${elem.price}/-</h4>
 

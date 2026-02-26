@@ -93,12 +93,14 @@ main{
 .color{
     display: flex;
     gap: 2px;
+    
 }
-.color div{
+.inner-color{
     border: 1px solid rgb(255, 255, 255);
     border-radius: 50%;
     height: 15px;
     width: 15px;
+
 
 }
 .shoe-card h5{
