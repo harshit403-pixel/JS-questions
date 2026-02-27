@@ -1,0 +1,181 @@
+
+@font-face {
+    font-family: melody;
+    src: url(./Melody-Regular.otf);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: melody;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+        background-image: url(https://i.pinimg.com/1200x/f9/42/59/f94259fe80bf9c8a18ded78c61d595ce.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+nav{
+    position: fixed;
+    z-index: 100;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.214);
+
+}
+main{
+    padding: 100px 50px ;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.player-card{
+    position: relative;
+    border-radius: 13px;
+    height: 400px;
+    width: 300px;
+    background: linear-gradient(blue, rgb(4, 4, 34));
+    box-shadow:inset 0.5px 1px 0px 0px white, inset -0.5px -0.3px 0px 0px white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.player-card::before{
+    content: "";
+    position: absolute;
+    height: 43%;
+    bottom: -30;
+    width: 90%;
+    left: 15;
+       background: linear-gradient(rgb(25, 25, 175), rgb(5, 5, 58));
+       z-index: 101;
+       filter:blur(20px);
+
+}
+.player-pic{
+    top: 19;  
+    position: absolute;
+    left: 0;
+    height: 400px;
+    transform: translate(-10%, -2%);
+    z-index: 2;
+    scale: .95;
+}
+.jersey-club{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.jersey-club h2{
+    color: rgba(255, 255, 255, 0.829);
+}
+.jersey-club img{
+    height: 40px;
+}
+.name{
+    position: relative;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name h1{
+    margin-top: 170px;
+    color: white;
+}
+.player-stats{
+    position: relative;
+    z-index: 102;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    color: white;
+}
+.age{
+    margin-top: 20px;
+}
+.age h4{
+    font-size: 13px;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.484);
+}
+.age h2{
+    font-size: 16px;
+}
+
+form{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+form input{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+    box-shadow:inset -.4px -.3px 0px white ;
+    background: linear-gradient(to right,rgb(28, 28, 136), rgb(3, 3, 40));
+    color: white;
+}
+form select{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+    box-shadow:inset -.4px -.3px 0px white ;
+    background: linear-gradient(to right,rgb(252, 252, 252), rgb(3, 3, 40));
+    color: rgb(25, 19, 19);
+    font-weight: 600;
+}
+
+form button{
+        border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+    box-shadow:inset -.4px -.3px 0px white ;
+    background: linear-gradient(to right,rgb(6, 6, 47), rgb(19, 19, 110));
+    color: rgb(255, 252, 252);
+}
+button:active{
+    scale: .95;
+}
+.btns{
+    display: flex; 
+    gap: 10px;
+    margin-top: 10px;
+        justify-content: center;
+    align-items: center;
+}
+.btns button{
+    position: relative;
+    z-index: 102;
+
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px; 
+    background-color: rgba(6, 114, 6, 0.536);
+    color: white;  
+}
+
+.btns .remove{
+    background-color: rgba(255, 0, 0, 0.518);
+}
+

@@ -63,6 +63,19 @@ let shoes = [
       "img1": "https://www.wearcomet.com/cdn/shop/files/tuscan-min_2a858dec-7839-470c-b3c3-f1488b89440f.jpg?v=1744881547&width=1100",
       "img2": "https://www.wearcomet.com/cdn/shop/files/zoom1-min_ae26abce-c5c9-49e4-be5b-b2dfd63ef2ba.jpg?v=1744881547&width=1100",
       "bgImage": "https://i.pinimg.com/1200x/84/a6/91/84a6910bee92533ca2f071a839cc0dcc.jpg"
+    },
+    {
+      "shoesName": "Gel-Kayano 29",
+      "color": ["Blue", "Grey"],
+      "sizeRange": "5-10",
+      "available": true,
+      "brandName": "Comet",
+      "category": "women",
+      "latest": "yes",
+      "price": 7499,
+      "img1": "https://www.wearcomet.com/cdn/shop/files/tuscan-min_2a858dec-7839-470c-b3c3-f1488b89440f.jpg?v=1744881547&width=1100",
+      "img2": "https://www.wearcomet.com/cdn/shop/files/zoom1-min_ae26abce-c5c9-49e4-be5b-b2dfd63ef2ba.jpg?v=1744881547&width=1100",
+      "bgImage": "https://i.pinimg.com/1200x/84/a6/91/84a6910bee92533ca2f071a839cc0dcc.jpg"
     }
 ]
 
