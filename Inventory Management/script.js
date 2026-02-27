@@ -74,10 +74,8 @@ form.addEventListener("submit", (dets) => {
         clubLogo: form.childNodes[5].value
     }
     if (editIndex === null) {
-       
         players.push(newPlayer);
     } else {
-   
         players.splice(editIndex, 1, newPlayer);
         editIndex = null;
     }
@@ -90,11 +88,11 @@ form.addEventListener("submit", (dets) => {
 
 main.addEventListener('click', function (dets) {
     if (dets.target.id && dets.target.innerHTML == 'Remove') {
-        players.splice(Number(dets.target.id), 1)
+        players.splice(dets.target.id, 1)
         localStorage.setItem("players", JSON.stringify(players));
     }
         if (dets.target.id && dets.target.innerHTML == 'Edit') {
-    editIndex = Number(dets.target.id); 
+    editIndex = dets.target.id; 
 
     let editFile = players[editIndex];
 

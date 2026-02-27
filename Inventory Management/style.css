@@ -53,6 +53,10 @@ main{
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    transition:all .5s ease; 
+}
+.player-card:hover{
+    scale: 1.02;  
 }
 .player-card::before{
     content: "";
@@ -67,13 +71,14 @@ main{
 
 }
 .player-pic{
-    top: 19;  
+    object-fit: cover; 
+    align-self: center;
+    margin: auto;
+    top: 10;   
     position: absolute;
-    left: 0;
-    height: 400px;
-    transform: translate(-10%, -2%);
+    height: 400px;  
     z-index: 2;
-    scale: .95;
+    scale: 1;
 }
 .jersey-club{
     display: flex;
@@ -144,7 +149,9 @@ form select{
     color: rgb(25, 19, 19);
     font-weight: 600;
 }
-
+button{
+    cursor: pointer;
+}
 form button{
         border: none;
     padding: 5px;
