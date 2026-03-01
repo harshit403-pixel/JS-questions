@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scrollbar-width: none;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+main{
+    position: relative; 
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgb(52, 52, 52);
+}
+button{
+    cursor: pointer;
+    transition: all .3s ease;
+}
+button:active{
+    scale: .95;
+}
+nav{
+    background-color: rgba(0, 0, 0, 0.11);
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    color: white;
+}
+
+nav button{ 
+    box-shadow: inset.4px .4px 0px white;
+    padding:10px 30px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right bottom ,black, rgb(88, 88, 88));
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.item-cards{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.card{
+    height: fit-content;
+    padding-bottom: 10px;
+    width: 270px;
+    background:linear-gradient(rgb(160, 160, 160), rgb(184, 184, 184));
+    border-radius: 10px;
+    box-shadow: .5px .5px 0px white, -1px -1px 5px rgba(0, 0, 0, 0.389);
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card img{margin-top: 7px;
+    border:2px solid black ;
+    border-radius: 10px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    width: 95%;
+
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    width: 95%;
+}
+
+.details button{
+    box-shadow: inset.4px .4px 0px rgb(0, 0, 0);
+    padding:8px 30px;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right bottom ,rgb(58, 58, 58), rgb(47, 47, 47));
+    font-weight: 600;
+    font-size: 15px;
+
+}
+.add-item-form{
+    padding: 10px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;    
+
+}
+
+.add-item-form input{
+    border: none;
+    padding: 5px;
+    border-radius: 5px; 
+}
+.add-item-form select{
+    border: none;
+    padding: 5px;
+    border-radius: 5px; 
+}
+.add-item-form button{
+    box-shadow: inset.4px .4px 0px white;
+    padding:5px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right bottom ,black, rgb(88, 88, 88));
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.cart{
+    height: 0%; 
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    background-color: rgb(64, 61, 61);
+}   
