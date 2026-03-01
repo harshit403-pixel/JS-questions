@@ -126,9 +126,10 @@ nav button{
 
 .cart{
     height: 0%; 
-    padding: 20px;
+    padding: 0px;
     width: 100%;
     position: absolute;
     top: 10%;
     background-color: rgb(64, 61, 61);
+    transition: all ease .5s;
 }   

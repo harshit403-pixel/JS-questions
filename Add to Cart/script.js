@@ -134,3 +134,4 @@ form.addEventListener("submit",(e)=>{
 })
 
 
+let btn = document.querySelector(".cart")
