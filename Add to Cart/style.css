@@ -140,3 +140,20 @@ nav button{
     gap: 10px;
     flex-wrap: wrap;
 }   
+.addtoaster{
+    transform: translateY(200%);
+    opacity: 0;
+    bottom: 20;
+    right: 20;
+    position: absolute;
+    height: 40px;
+    background-color: rgb(43, 255, 43);
+    width:200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; 
+    font-size: 20px;
+    transition: all .5s ease;
+}
+
