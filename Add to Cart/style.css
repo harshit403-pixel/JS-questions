@@ -34,7 +34,10 @@ nav{
     padding: 0px 50px;
     color: white;
 }
-
+#home-btn{
+    user-select: none;
+    cursor: pointer;
+}
 nav button{ 
     box-shadow: inset.4px .4px 0px white;
     padding:10px 30px;
@@ -132,4 +135,8 @@ nav button{
     top: 10%;
     background-color: rgb(64, 61, 61);
     transition: all ease .5s;
+    overflow: hidden;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }   

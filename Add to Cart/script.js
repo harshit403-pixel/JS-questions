@@ -1,4 +1,5 @@
-const products = [
+
+let products = JSON.parse(localStorage.getItem("products")) || [
   {
     id: 1,
     name: "Apple",
@@ -34,68 +35,22 @@ const products = [
     price: 30,
     expiry: "7 days",
     image: "https://i.pinimg.com/736x/87/45/2f/87452f2aec649ba5fb138fd5015764d1.jpg"
-  },
-  {
-    id: 5,
-    name: "Milk",
-    category: "Dairy",
-    quantity: "500 ml",
-    price: 28,
-    expiry: "2 days",
-    image: "https://i.pinimg.com/736x/7f/7b/dd/7f7bdd703beb19c8bb3e3bbb6b1b20ba.jpg"
-  },
-  {
-    id: 6,
-    name: "Bread",
-    category: "Bakery",
-    quantity: "1 pack",
-    price: 35,
-    expiry: "4 days",
-    image: "https://i.pinimg.com/736x/58/c8/ad/58c8adbf24a282eaef263829e105b1ff.jpg"
-  },
-  {
-    id: 7,
-    name: "Lay's Chips",
-    category: "Snacks",
-    quantity: "52 g",
-    price: 20,
-    expiry: "3 months",
-    image: "https://i.pinimg.com/1200x/eb/58/04/eb5804becff9da49099ef38799f8455e.jpg"
-  },
-  {
-    id: 8,
-    name: "Coca Cola",
-    category: "Beverages",
-    quantity: "750 ml",
-    price: 40,
-    expiry: "6 months",
-    image: "https://i.pinimg.com/736x/38/15/8d/38158d0aa6554f1a231df49626848cf3.jpg"
-  },
-  {
-    id: 9,
-    name: "Eggs",
-    category: "Poultry",
-    quantity: "12 pieces",
-    price: 75,
-    expiry: "10 days",
-    image: "https://i.pinimg.com/1200x/ac/20/04/ac2004a565f6771949bcec3351d38b7a.jpg"
-  },
-  {
-    id: 10,
-    name: "Rice",
-    category: "Groceries",
-    quantity: "1 kg",
-    price: 55,
-    expiry: "12 months",
-    image: "https://i.pinimg.com/736x/79/c4/5a/79c45aacd5dfbd3ff53cc4fd5275dbcb.jpg"
   }
 ];
 
+let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [
+
+]
+let home = document.querySelector("#home-btn")
+let btn = document.querySelector("#cart-btn")
+let cartPage = document.querySelector(".cart")
 let card = document.querySelector(".item-cards")
+let form = document.querySelector("form")
 
 function printCard(){
     let sum = ''
-products.forEach((elem)=>{
+products.forEach((elem,idx)=>{
+    
     sum += `  
               <div class="card">
                 <img src="${elem.image}" alt="">
@@ -105,17 +60,33 @@ products.forEach((elem)=>{
                     <h3>Quantity : ${elem.quantity}</h3>
                     <h3>Price : ₹${elem.price}/- </h3>
                     <h3>Expiry : ${elem.expiry} </h3>
-                    <button>Add to Cart</button>
+                    <button id="${idx}" >Add to Cart</button>
+                    <button id="${idx}" >Remove</button>
                 </div>
             </div>
         </div>`
 
-        card.innerHTML = sum
+        
     })
+    card.innerHTML = sum
 }
 printCard()
 
-let form = document.querySelector("form")
+
+ function deleteItem(id){
+
+    let result =  products.filter((elem,idx)=>{
+            return idx!= id
+        })
+        console.log(result);
+        products = result
+    localStorage.setItem("products", JSON.stringify(products));   
+        printCard()
+
+ }
+
+
+
 
 form.addEventListener("submit",(e)=>{
     e.preventDefault()
@@ -129,9 +100,75 @@ form.addEventListener("submit",(e)=>{
 
     }
     products.push(newItem)
+
+    localStorage.setItem("products", JSON.stringify(products));   
     printCard()
   
 })
 
 
-let btn = document.querySelector(".cart")
+btn.addEventListener("click",()=>{
+    cartPage.style.height = "100%"
+    cartPage.style.paddingTop = "20px" 
+})
+
+home.addEventListener("click",()=>{
+        cartPage.style.height = "0%"
+    cartPage.style.paddingTop = "0px"
+})
+
+function renderCart() {
+  let cardhtml = '';
+
+  cartProducts.forEach((element, idx) => {
+    cardhtml += `
+      <div class="card"> 
+        <img src="${element.image}" alt="">
+        <div class="details">
+          <h2>${element.name}</h2>
+          <h3>Price : ₹${element.price}/-</h3>
+          <button id="${idx}" class="remove-btn">Remove</button>
+        </div>
+      </div>
+    `;
+  });
+
+  cartPage.innerHTML = cardhtml;
+}
+
+card.addEventListener("click",(dets)=>{
+    if(dets.target.id && dets.target.textContent == "Add to Cart"){  
+        let cartItem = products[dets.target.id]
+        cartProducts.push(cartItem)
+        localStorage.setItem("cartProducts",JSON.stringify(cartProducts))
+        renderCart()
+    }
+
+    if(dets.target.id && dets.target.innerHTML == "Remove" ){
+      deleteItem(dets.target.id)
+
+        
+    }
+
+    
+})
+
+
+ function deleteCart(id){
+
+    let result =  cartProducts.filter((elem,idx)=>{
+            return idx!= id
+        })
+        console.log(result);
+        cartProducts = result
+                localStorage.setItem("cartProducts",JSON.stringify(cartProducts))
+         renderCart()
+
+ }
+ cartPage.addEventListener("click",(detss)=>{
+    
+    if(detss.target.id){
+        deleteCart(detss.target.id)
+    }
+ })
+  renderCart()
