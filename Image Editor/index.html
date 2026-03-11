@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <nav>
+            <h1>Image Editor</h1>
+            <button id="download">Export Image<i class="ri-download-line"></i></button>
+        </nav>
+
+    <main>
+
+        <section class="section1">
+            <div class="section-left">
+                <div class="add-options">
+                    <label for="uploadImage" class="addBtn"> Choose Image 
+                    <input type="file" hidden id="uploadImage" accept="image/*">
+                 </label>
+                  
+                    <button id="resetBtn">Reset</button>
+                </div>
+
+                <div class="uploadedImage">
+                    <div class="placeholder">
+                                            <h1>No image Choosen</h1>
+                    <i class="ri-image-add-line"></i>
+                    </div>
+
+                    <canvas id="image-canvas"></canvas>
+
+                </div>
+
+            </div>
+            <div class="section-right">
+
+                <h2>Filters</h2>
+                <div class="inputs">
+
+                </div>
+                <div class="presets-box">
+                 
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
